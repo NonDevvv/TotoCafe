@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOTO CAFÉ | Menú</title>
+    
+    <link rel="icon" type="image/png" href="totomal.png">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="ocean"><div class="wave"></div></div>
+
+    <nav class="navbar">
+        <div class="navbar-left">
+            <img src="totomal.jpg" alt="Logo" class="navbar-logo">
+        </div>
+        <div class="navbar-center">
+            <div class="nav-links">
+                <a href="javascript:void(0)" class="tab-link active">MENÚ</a>
+                <a href="javascript:void(0)" class="tab-link">SOBRE NOSOTROS</a>
+                <a href="javascript:void(0)" class="tab-link">RESEÑAS</a>
+            </div>
+        </div>
+        <div class="navbar-right"><div class="badge">EST. 2025</div></div>
+    </nav>
+
+    <main class="container">
+        <img src="222.png" alt="" class="img-deco deco-desayunos js-float">
+        <img src="20.png" alt="" class="img-deco deco-brunch js-float">
+        <img src="25.png" alt="" class="img-deco deco-bebidas-c js-float">
+        <img src="23.png" alt="" class="img-deco deco-bebidas-f js-float">
+        <img src="21.png" alt="" class="img-deco deco-postres js-float">
+
+        <section id="menu-tab" class="tab-content active">
+            <div class="hero-text">
+                <h1>Toto Café</h1>
+                <p class="tagline">CON EL AMOR DE SIEMPRE EN CADA TAZA</p>
+            </div>
+
+            <h2 class="category-title">Desayunos Salados</h2>
+            <div class="grid">
+                <div class="card" onclick="toggleSeleccion(this, 'Huevos al gusto', 68)">
+                    <h3>Huevos al gusto</h3>
+                    <p>Jamón, salchicha, mexicana, divorciados, longaniza u omelette. Con frijolitos y totopos.</p>
+                    <span class="price">$68</span>
+                </div>
+                <div class="card" onclick="toggleSeleccion(this, 'Chilaquiles Tradicionales', 105)">
+                    <h3>Chilaquiles Tradicionales</h3>
+                    <p>Rojos o verdes. Con pollo o huevo, cebolla, crema y queso. Con bolillo.</p>
+                    <span class="price">$105</span>
+                </div>
+                <div class="card" onclick="toggleSeleccion(this, 'Enchiladas Suizas', 115)">
+                    <h3>Enchiladas Suizas</h3>
+                    <p>Salsa verde cremosa, queso gratinado y pollo. Con bolillo.</p>
+                    <span class="price">$115</span>
+                </div>
+                <div class="card" onclick="toggleSeleccion(this, 'Bagel de Pechuga', 110)">
+                    <h3>Bagel de Pechuga de Pollo</h3>
+                    <p>Pechuga, aderezo, jitomate, espinacas, aguacate y queso. Con chips.</p>
+                    <span class="price">$110</span>
+                </div>
+                <div class="card" onclick="toggleSeleccion(this, 'Paninis', 105)">
+                    <h3>Paninis de jamón o pollo</h3>
+                    <p>Aguacate, espinaca, queso manchego y papas en hojuelas.</p>
+                    <span class="price">$105</span>
+                </div>
+            </div>
+
+            <div class="promo-box">
+                <input type="checkbox" id="extraDesayuno" onchange="actualizarTotal()">
+                <div class="promo-text">
+                    <strong>¿Hacerlo Paquete Desayuno? (+$38)</strong>
+                    <p>Fruta de temporada, café americano y pan dulce artesanal.</p>
+                </div>
+            </div>
+
+            <h2 class="category-title">Brunch & Lunch</h2>
+            <div class="grid">
+                <div class="card" onclick="toggleSeleccion(this, 'Chilaquiles Toto', 110)">
+                    <h3>Chilaquiles Toto</h3>
+                    <p>Bañados en salsa cremosa de frijol con crema, queso y pollo.</p>
+                    <span class="price">$110</span>
+                </div>
+                <div class="card" onclick="toggleSeleccion(this, 'El Bowl de Toto', 115)">
+                    <h3>El Bowl de Toto</h3>
+                    <p>Mix de lechugas, manzana verde, pollo, semillas y aderezo miel y mostaza.</p>
+                    <span class="price">$115</span>
+                </div>
+            </div>
+
+            <div class="promo-box">
+                <input type="checkbox" id="extraLunch" onchange="actualizarTotal()">
+                <div class="promo-text">
+                    <strong>¿Acompañar con Agua Fresca del día? (+$25)</strong>
+                    <p>Agua fresca del día de 500ml.</p>
+                </div>
+            </div>
+
+            <h2 class="category-title">Bebidas Calientes</h2>
+            <div class="grid">
+                <div class="card" onclick="toggleSeleccion(this, 'Americano', 35)"><h3>Americano</h3><span class="price">$35</span></div>
+                <div class="card" onclick="toggleSeleccion(this, 'Capuccino Toto', 60)"><h3>Capuccino Toto</h3><p>Miel y canela.</p><span class="price">$60</span></div>
+                <div class="card" onclick="toggleSeleccion(this, 'Capuccino Nutella', 70)"><h3>Capuccino Nutella</h3><span class="price">$70</span></div>
+                <div class="card" onclick="toggleSeleccion(this, 'Chai Latte', 65)"><h3>Chai Latte</h3><span class="price">$65</span></div>
+                <div class="card" onclick="toggleSeleccion(this, 'Moka', 65)"><h3>Café Moka</h3><span class="price">$65</span></div>
+                <div class="card" onclick="toggleSeleccion(this, 'Affogato', 100)"><h3>Affogato</h3><p>Helado vainilla, expresso y Nutella.</p><span class="price">$100</span></div>
+            </div>
+
+            <h2 class="category-title">Bebidas Frías</h2>
+            <div class="grid">
+                <div class="card" onclick="toggleSeleccion(this, 'Caramel Macchiato', 75)"><h3>Caramel Macchiato</h3><span class="price">$75</span></div>
+                <div class="card" onclick="toggleSeleccion(this, 'Dalgona Nutella', 80)"><h3>Dalgona Nutella</h3><span class="price">$80</span></div>
+                <div class="card" onclick="toggleSeleccion(this, 'Frappé Horchata', 80)"><h3>Frappé Horchata</h3><span class="price">$80</span></div>
+                <div class="card" onclick="toggleSeleccion(this, 'Frapuccino Nutella', 100)"><h3>Frapuccino Nutella</h3><span class="price">$100</span></div>
+                <div class="card" onclick="toggleSeleccion(this, 'Frappé Oreo', 95)"><h3>Frappé Oreo</h3><span class="price">$95</span></div>
+                <div class="card" onclick="toggleSeleccion(this, 'Soda Italiana', 55)"><h3>Soda Italiana</h3><span class="price">$55</span></div>
+                <div class="card" onclick="toggleSeleccion(this, 'Agua Fresca', 35)"><h3>Agua Fresca</h3><span class="price">$35</span></div>
+            </div>
+
+            <h2 class="category-title">Postres y Dulces</h2>
+            <div class="grid">
+                <div class="card" onclick="toggleSeleccion(this, 'Quesa-hotcakes', 85)">
+                    <div class="new-tag">Nuevo</div>
+                    <h3>Quesa-hotcakes</h3><p>Rellenos con crema batida y fruta fresca.</p><span class="price">$85</span>
+                </div>
+                <div class="card" onclick="toggleSeleccion(this, 'Crepaghetis', 115)">
+                    <h3>Crepaghetis</h3><p>Tiritas de crepa con fruta y toppings.</p><span class="price">$115</span>
+                </div>
+                <div class="card" onclick="toggleSeleccion(this, 'Mini Hotcakes', 65)">
+                    <h3>Mini Hotcakes</h3><p>Fruta y 2 toppings.</p><span class="price">$65</span>
+                </div>
+                <div class="card" onclick="toggleSeleccion(this, 'Parfait Toto', 85)">
+                    <h3>Parfait Toto</h3><p>Yoghurt natural, fruta, granola y cottage.</p><span class="price">$85</span>
+                </div>
+            </div>
+
+            <div class="checkout">
+                <div class="total-container">
+                    <span>Total estimado</span>
+                    <strong id="totalLabel">$0</strong>
+                </div>
+                <button class="btn-order" onclick="enviarPedido()">PEDIR POR WHATSAPP</button>
+            </div>
+        </section>
+
+        <footer class="footer-info">
+            <div class="social-btns">
+                <a href="https://instagram.com/toto.cafemx" target="_blank" class="s-btn ig">INSTAGRAM</a>
+                <a href="https://tiktok.com/@toto.cafemx" target="_blank" class="s-btn tk">TIKTOK</a>
+            </div>
+            <p class="copyright">© 2026 TOTO CAFÉ. TODOS LOS DERECHOS RESERVADOS.</p>
+        </footer>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
